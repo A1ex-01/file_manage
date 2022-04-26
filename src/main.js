@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-// import ElementUI from 'element-ui';
 import {Button, Table, TableColumn, Dialog, Input, Alert, Pagination, Form, FormItem, Upload, MessageBox} from "element-ui"
 import "./assets/style/reset.scss"
 // Vue.use(ElementUI);

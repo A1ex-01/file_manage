@@ -4,7 +4,7 @@
       <img src="../assets/img/Logo.png" alt="" />
       <span>file_manage</span>
       <div class="exit_btn">
-        <el-button type="danger" @click="exit">EXIT</el-button>
+        <el-button type="danger" @click="exit">exit</el-button>
       </div>
     </div>
     <div class="alert">
@@ -200,10 +200,10 @@ export default {
     getUrl(val) {
       return `http://121.40.172.208/uploadapi/static/upload/${val}`;
     },
-    getRef(i){
+    getRef(i) {
       console.log(i);
-      return "1"
-    }
+      return "1";
+    },
   },
   mounted() {
     this.getFile();
