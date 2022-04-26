@@ -1,17 +1,17 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import { getCookie } from '../utils/cookie'
-import Home from '../views/Home.vue'
-Vue.use(VueRouter)
+import Vue from "vue";
+import VueRouter from "vue-router";
+import { getCookie } from "../utils/cookie";
+import Home from "../views/Home.vue";
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    redirect: "/home"
+    redirect: "/home",
   },
   {
-    path: '/home',
-    name: 'Home',
+    path: "/home",
+    name: "Home",
     component: Home,
     beforeEnter: (to, from, next) => {
       // reject the navigation
@@ -19,22 +19,22 @@ const routes = [
         if (getCookie("status")) {
           next();
         } else {
-          next({ path: "/login" })
+          next({ path: "/login" });
         }
       }
     },
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import("../views/Login.vue")
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/Login.vue"),
   },
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "hash",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
 export default router;
